@@ -1,0 +1,128 @@
+import { useState, useEffect } from "react"
+import { useParams, useNavigate, Link } from "react-router-dom"
+const API = "http://localhost:8080"
+
+
+function TransactionEditForm() {
+  let { index } = useParams()
+  const navigate = useNavigate()
+  const [transaction, setTransaction] = useState({
+    item_name: "",
+    amount: 0,
+    date: "",
+    from: "",
+    category: "",
+    inOrOut: true
+  })
+  
+  const handleTextChange = (event) => {
+    if(event.target.id !== "amount"){
+        setLog({ ...transaction, [event.target.id]: event.target.value })
+    }
+    else{
+        setLog({ ...transaction, [event.target.id]: Number(event.target.value) })
+    }
+  }
+
+  const handleCheckboxChange = () => {
+    setLog({ ...transaction, inOrOut: !transaction.inOrOut })
+  }
+
+  useEffect(() => {
+    fetch(`${API}/transactions/${index}`)
+      .then(response => response.json())
+      .then(transaction => {
+        //console.log(transaction)
+        setLog(transaction)
+    })
+    .catch(() => navigate("/not-found"))
+  }, [index, navigate]);
+
+  const updateTransaction = () => {
+    const httpOptions = {
+      "method" : "PUT",
+      "body" : JSON.stringify(log),
+      "headers" : {
+        "Content-type" : "application/json"
+      }
+    }
+
+      fetch(`${API}/transactions/${index}`, httpOptions)
+        .then(() => { 
+          alert(`${transaction.item_name} has been updated!`);
+          navigate(`/transactions/${index}`)
+        })
+        .catch((err) => console.error(err))
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    updateTransaction();
+  }
+  return (
+    <div className="Edit">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="item_name">Item Name:</label>
+        <input
+          id="item_name"
+          value={transaction.item_name}
+          type="text"
+          onChange={handleTextChange}
+          placeholder={transaction.item_name}
+          required
+        />
+        <label htmlFor="date">Date:</label>
+        <input
+          id="date"
+          value={transaction.date}
+          type="text"
+          placeholder="date"
+          onChange={handleTextChange}
+        />
+        <label htmlFor="category">Category:</label>
+        <input
+          id="category"
+          value={transaction.category}
+          type="text"
+          placeholder="category"
+          onChange={handleTextChange}
+        />
+        <label htmlFor="from">From:</label>
+        <textarea
+          id="from"
+          value={transaction.from}
+          type="text"
+          placeholder="favorite quote"
+          onChange={handleTextChange}
+        />
+        <label htmlFor="inOrOut">Money In or Money Out:</label>
+        <input
+          id="mistakesWereMadeToday"
+          type="checkbox"
+          checked={transaction.inOrOut}
+          onChange={handleCheckboxChange}
+        />
+        <label htmlFor="amount">Money Amount:</label>
+        <input
+          id="amount"
+          value={transaction.amount}
+          type="number"
+          placeholder="#"
+          onChange={handleTextChange}
+        />
+        <br />
+        <input type="submit" />
+      </form>
+      <Link to={`/transactions/${index}`}>
+        <button>Nevermind!</button>
+      </Link>
+      <div>
+          {" "}
+          <Link to={`/transactions`}>
+            <button>Back</button>
+          </Link>
+      </div>
+    </div>
+  )
+}
+
+export default TransactionEditForm
