@@ -16,15 +16,15 @@ function TransactionNewForm() {
 
   const handleTextChange = (event) => {
     if(event.target.id !== "amount"){
-        setLog({ ...transaction, [event.target.id]: event.target.value })
+        setTransaction({ ...transaction, [event.target.id]: event.target.value })
     }
     else{
-        setLog({ ...transaction, [event.target.id]: Number(event.target.value) })
+        setTransaction({ ...transaction, [event.target.id]: Number(event.target.value) })
     }
   }
 
   const handleCheckboxChange = () => {
-    setLog({ ...transaction, inOrOut: !transaction.inOrOut })
+    setTransaction({ ...transaction, inOrOut: !transaction.inOrOut })
   }
 
   const addTransaction = () => {
