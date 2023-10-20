@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Transaction from "./Transaction";
-const API = "http://localhost:8080"
+const API = import.meta.env.VITE_BASE_URL
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
@@ -13,6 +13,7 @@ function Transactions() {
 
   return (
     <div className="Transactions"style={{textAlign:'center'}} >
+        <>Total: {transactions.reduce((tot,curr) => {return tot+curr.amount},0 ) }</>
       <section >
         <table >
           <thead >

@@ -1,7 +1,7 @@
 import { useState } from "react"
 //import { Link, useParams, useNavigate } from "react-router-dom";
 import { useNavigate, Link } from "react-router-dom"
-const API = "http://localhost:8080"
+const API = import.meta.env.VITE_BASE_URL
 
 function TransactionNewForm() {
   const navigate = useNavigate()

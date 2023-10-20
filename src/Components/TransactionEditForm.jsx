@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
-const API = "http://localhost:8080"
+const API = import.meta.env.VITE_BASE_URL
 
 
 function TransactionEditForm() {
@@ -17,15 +17,15 @@ function TransactionEditForm() {
   
   const handleTextChange = (event) => {
     if(event.target.id !== "amount"){
-        setLog({ ...transaction, [event.target.id]: event.target.value })
+        setTransaction({ ...transaction, [event.target.id]: event.target.value })
     }
     else{
-        setLog({ ...transaction, [event.target.id]: Number(event.target.value) })
+        setTransaction({ ...transaction, [event.target.id]: Number(event.target.value) })
     }
   }
 
   const handleCheckboxChange = () => {
-    setLog({ ...transaction, inOrOut: !transaction.inOrOut })
+    setTransaction({ ...transaction, inOrOut: !transaction.inOrOut })
   }
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function TransactionEditForm() {
       .then(response => response.json())
       .then(transaction => {
         //console.log(transaction)
-        setLog(transaction)
+        setTransaction(transaction)
     })
     .catch(() => navigate("/not-found"))
   }, [index, navigate]);
@@ -41,7 +41,7 @@ function TransactionEditForm() {
   const updateTransaction = () => {
     const httpOptions = {
       "method" : "PUT",
-      "body" : JSON.stringify(log),
+      "body" : JSON.stringify(transaction),
       "headers" : {
         "Content-type" : "application/json"
       }

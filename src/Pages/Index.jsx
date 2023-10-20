@@ -1,4 +1,4 @@
-import Transactions from "../Transactions/Transactions"
+import Transactions from "../Components/Transactions"
 
 function Index(){
     return (

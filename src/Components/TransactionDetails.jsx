@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
-const API = "http://localhost:8080"
+const API = import.meta.env.VITE_BASE_URL
 
 function TransactionDetails() {
   const [transaction, setTransaction] = useState([])
@@ -10,8 +10,8 @@ function TransactionDetails() {
   useEffect(() => {
     fetch(`${API}/transactions/${index}`)
     .then(response => response.json())
-    .then(log => {
-      //console.log(log)
+    .then(transaction => {
+      //console.log(transaction)
       setTransaction(transaction)
     })
     .catch(() => navigate("/not-found"))
@@ -31,7 +31,15 @@ function TransactionDetails() {
   return (
     <article>
       <h3>
+        hi
+        h2
          {transaction.item_name}
+         {transaction.amount}
+         {transaction.date}
+         {transaction.from}
+         {transaction.category}
+         {transaction.inOrOut}
+         hi
          {transaction.inOrOut ? (
           <span>❎</span>
         ) : (
