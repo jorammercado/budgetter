@@ -18,7 +18,6 @@ function App() {
       <Router>
       <div className="nav">
         <NavBar />
-      
       </div>
       
         <main className="main">

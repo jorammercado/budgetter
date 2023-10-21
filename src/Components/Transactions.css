@@ -16,6 +16,7 @@
     text-align: center;
     table-layout: fixed;
     display: table;
-    width: 600px;
+    width: 700px;
+    border-spacing: 21px;
   }
   

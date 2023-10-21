@@ -1,0 +1,14 @@
+
+.link{
+    color:white;
+}
+
+
+a{
+    color:rgb(161, 87, 19);
+    font-size: 22px;
+}
+
+a:hover{
+    color: #ddd;
+}
