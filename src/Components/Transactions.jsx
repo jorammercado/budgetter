@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Transaction from "./Transaction";
+import "./Transactions.css"
 const API = import.meta.env.VITE_BASE_URL
 
 function Transactions() {

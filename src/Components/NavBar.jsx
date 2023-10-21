@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
+import "./NavBar.css"
 
 export default function NavBar() {
   return (
-    <div style={{textAlign:'center'}}> 
+    <div className="navbar" > 
       <nav>
         <h1>
           <Link to="/transactions">Transactions </Link>
