@@ -9,13 +9,19 @@ import New from "./Pages/New"
 import Show from "./Pages/Show"
 
 import NavBar from "./Components/NavBar"
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
+      
       <Router>
+      <div className="nav">
         <NavBar />
-        <main>
+      
+      </div>
+      
+        <main className="main">
           <Routes>
             <Route path="/" element ={<Home />} />
             <Route path="/transactions" element={<Index />} />

@@ -13,7 +13,7 @@ function Transactions() {
   }, [])
 
   return (
-    <div className="Transactions"style={{textAlign:'center'}} >
+    <div className="Transactions" >
         <>Total: {transactions.reduce((tot,curr) => {return tot+curr.amount},0 ) }</>
       <section >
         <table >
