@@ -4,7 +4,7 @@ import "./Index.css"
 function Index(){
     return (
         <div className="Index">
-            <h2 style={{textAlign:'center'}} >Index Page </h2>
+            <h1>Current Balance: </h1>
             <Transactions />
         </div>
     )

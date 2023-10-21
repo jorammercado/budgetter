@@ -14,22 +14,25 @@ function Transactions() {
 
   return (
     <div className="Transactions" >
-        <>Total: {transactions.reduce((tot,curr) => {return tot+curr.amount},0 ) }</>
-      <section >
-        <table >
-          <thead >
+        <h2 className="balance">
+         {transactions.reduce((tot,curr) => {return tot+curr.amount},0 ) }
+        </h2>
+      {/* <section > */}
+        <table className="table" >
+          
             <tr >
-              <th></th>
-              <th >Choose Transaction:</th>
+              <th >Date</th>
+              <th >Description</th>
+              <th >Amount</th>
             </tr>
-          </thead>
+          
           <tbody >
             {transactions.map((transaction, index) => {
               return <Transaction key={index} transaction={transaction} index={index} />;
             })}
           </tbody>
         </table>
-      </section>
+      {/* </section> */}
     </div>
   );
 }

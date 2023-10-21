@@ -7,6 +7,9 @@ export default function NavBar() {
         {/* <div className="container"> */}
             <nav className="main">
                 <h1>
+                <Link to="/">Home </Link>
+                </h1>
+                <h1>
                 <Link to="/transactions">Transactions </Link>
                 </h1>
                 <h1>

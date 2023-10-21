@@ -1,11 +1,21 @@
-/* 
+
 
 .Transactions {
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-    justify-content: center;
-  }
 
-   */
+    text-align: center;
+    color: white;
+
+  }
+  /* .balance{
+    font-size:larger;    
+  } */
+
+  .table{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    table-layout: fixed;
+    display: table;
+    width: 600px;
+  }
+  
