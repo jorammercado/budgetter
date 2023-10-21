@@ -32,59 +32,48 @@ function TransactionDetails() {
   return (
     <article className="top">
 
-        
-
-
-      <h3>
-        hi
-        h2
-         {transaction.item_name}
-         {transaction.amount}
-         {transaction.date}
-         {transaction.from}
-         {transaction.category}
-         {transaction.inOrOut}
-         hi
-         {transaction.inOrOut ? (
-          <span>❎</span>
-        ) : (
-          <span>✅</span>
-        )}
-      </h3>
-
-      <h6>
-        amount:  {transaction.amount} - By {transaction.date}
-      </h6>
-      <p style={{fontStyle:'italic'}}>
-        category
-        {transaction.category}
-      </p>
-      <div>
-        <p>from:{transaction.inOrOut ? (
-          <span>Money comming in!!</span>
-        ) : (
-          <span>Too many losses.</span>
-        )}</p>
-        
-      </div>
+        <table className="table">
+            <tbody>
+            <tr>
+            <td> Description: {transaction.item_name}</td>
+            </tr>
+            <tr>
+            <td>Amount: {transaction.amount}  </td>
+            </tr>
+            <tr>
+            <td>Date: {transaction.date}</td>
+            </tr>
+            <tr>
+            <td>From: {transaction.from}</td>
+            </tr>
+            <tr>
+            <td>Category: {transaction.category}</td>
+            </tr>
+            <tr>
+            <td>Deposit or Widthdraw: {transaction.inOrOut?"Deposit":"Widthdraw"}</td>
+            </tr>
+            </tbody>
+        </table>
 
 
       <div className="showNavigation">
         <div>
-          {" "}
+          
           <Link to={`/transactions`}>
             <button>Back</button>
           </Link>
         </div>
         <div>
-          {" "}
+          
           <Link to={`/transactions/${index}/edit`}>
             <button>Edit</button>
           </Link>
         </div>
         <div>
-          {" "}
+          
+          <Link to={`/transactions`}>
           <button onClick={handleDelete}>Delete</button>
+          </Link>
         </div>
       </div>
     </article>

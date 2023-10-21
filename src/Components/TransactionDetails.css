@@ -1,5 +1,18 @@
 
-/* .top{
-    color:green;
-} */
+.top{
+    color:white;
+    text-align: center;
+    
+}
 
+.table{
+    font-size: 23px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    table-layout: auto;
+    display: table;
+    width: 700px;
+    border-spacing: 21px;
+  }
