@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
+import "./TransactionDetails.css"
 const API = import.meta.env.VITE_BASE_URL
 
 function TransactionDetails() {
@@ -29,7 +30,11 @@ function TransactionDetails() {
   }
 
   return (
-    <article>
+    <article className="top">
+
+        
+
+
       <h3>
         hi
         h2

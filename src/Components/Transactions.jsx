@@ -19,13 +19,13 @@ function Transactions() {
         </h2>
       {/* <section > */}
         <table className="table" >
-          
+          <tbody >
             <tr >
               <th >Date</th>
               <th >Description</th>
               <th >Amount</th>
             </tr>
-          
+          </tbody>
           <tbody >
             {transactions.map((transaction, index) => {
               return <Transaction key={index} transaction={transaction} index={index} />;

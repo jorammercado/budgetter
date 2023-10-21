@@ -1,8 +1,9 @@
 import TransactionDetails from "../Components/TransactionDetails"
+import "./Show.css"
 
 function Show(){
     return (
-        <div className="Show" style={{textAlign:'center'}}>
+        <div className="Show">
             <h2> Transaction / Show </h2>
             <TransactionDetails />
         </div>
