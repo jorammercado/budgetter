@@ -2,7 +2,6 @@ import { useState } from "react"
 //import { Link, useParams, useNavigate } from "react-router-dom";
 import { useNavigate, Link } from "react-router-dom"
 import "./TransactionNewForm.css"
-//import 
 const API = import.meta.env.VITE_BASE_URL
 
 function TransactionNewForm() {
@@ -40,7 +39,7 @@ function TransactionNewForm() {
     fetch(`${API}/transactions`, httpOptions)
       .then((res) => {
         const index = res.url.split("/")[res.url.split("/").length-1]
-        console.log(index)
+        //console.log(index)
         //alert(`${transaction.item_name} was added to the database!`);
         navigate(`/transactions/${index}`);
       })
