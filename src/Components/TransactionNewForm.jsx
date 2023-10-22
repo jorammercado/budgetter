@@ -3,7 +3,8 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import "./TransactionNewForm.css"
 // const API = import.meta.env.VITE_BASE_URL
-const API = process.env.VITE_BASE_URL
+// const API = process.env.VITE_BASE_URL
+const API = "https://budget-server-9diy.onrender.com/"
 
 function TransactionNewForm() {
   const navigate = useNavigate()

@@ -3,7 +3,8 @@ import React from 'react'
 import Transaction from "./Transaction";
 import "./Transactions.css"
 // const API = import.meta.env.VITE_BASE_URL
-const API = process.env.VITE_BASE_URL
+// const API = process.env.VITE_BASE_URL
+const API = "https://budget-server-9diy.onrender.com/"
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
