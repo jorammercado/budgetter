@@ -61,7 +61,6 @@ function TransactionEditForm() {
   }
   return (
     <div className="Edit">
-
       
       <form onSubmit={handleSubmit}>
         <label className="name" htmlFor="item_name">Item Name:</label>
@@ -97,7 +96,7 @@ function TransactionEditForm() {
           id="from"
           value={transaction.from}
           type="text"
-          placeholder="favorite quote"
+          placeholder="source of transaction"
           onChange={handleTextChange}
         />
         <br></br>
@@ -117,7 +116,6 @@ function TransactionEditForm() {
           checked={transaction.inOrOut}
           onChange={handleCheckboxChange}
         />
-        
         <br />
         <input type="submit" />
       </form>

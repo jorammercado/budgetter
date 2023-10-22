@@ -1,12 +1,14 @@
 import TransactionNewForm from "../Components/TransactionNewForm"
+import "./New.css"
 
 function New(){
     return (
-        <div className="New" style={{textAlign:'center'}}>
-            <h2> Transaction / New Page</h2>
-            <TransactionNewForm />
+        <div className="New" >
+            <h2> New Transaction </h2>
+            <br></br>
+            <h3><TransactionNewForm /> </h3>
         </div>
     )
 }
 
-export default New;
+export default New

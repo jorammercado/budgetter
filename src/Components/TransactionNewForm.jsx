@@ -1,6 +1,7 @@
 import { useState } from "react"
 //import { Link, useParams, useNavigate } from "react-router-dom";
 import { useNavigate, Link } from "react-router-dom"
+import "./TransactionNewForm.css"
 const API = import.meta.env.VITE_BASE_URL
 
 function TransactionNewForm() {
@@ -52,15 +53,16 @@ function TransactionNewForm() {
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="item_name">Item Name:</label>
+        <label className="name" htmlFor="item_name">Item Name:</label>
         <input
           id="item_name"
           value={transaction.item_name}
           type="text"
           onChange={handleTextChange}
-          placeholder={transaction.item_name}
+          placeholder="name of transaction"
           required
         />
+        <br></br>
         <label htmlFor="date">Date:</label>
         <input
           id="date"
@@ -69,6 +71,7 @@ function TransactionNewForm() {
           placeholder="date"
           onChange={handleTextChange}
         />
+        <br></br>
         <label htmlFor="category">Category:</label>
         <input
           id="category"
@@ -77,22 +80,17 @@ function TransactionNewForm() {
           placeholder="category"
           onChange={handleTextChange}
         />
+        <br></br>
         <label htmlFor="from">From:</label>
-        <textarea
+        <input
           id="from"
           value={transaction.from}
           type="text"
-          placeholder="favorite quote"
+          placeholder="source of transaction"
           onChange={handleTextChange}
         />
-        <label htmlFor="inOrOut">Money In or Money Out:</label>
-        <input
-          id="mistakesWereMadeToday"
-          type="checkbox"
-          checked={transaction.inOrOut}
-          onChange={handleCheckboxChange}
-        />
-        <label htmlFor="amount">Money Amount:</label>
+        <br></br>
+        <label htmlFor="amount">Amount:</label>
         <input
           id="amount"
           value={transaction.amount}
@@ -100,13 +98,20 @@ function TransactionNewForm() {
           placeholder="#"
           onChange={handleTextChange}
         />
+        <br></br>
+        <label id="check" htmlFor="inOrOut">Deposit/Widthdraw:</label>
+        <input
+          id="inOrOut"
+          type="checkbox"
+          checked={transaction.inOrOut}
+          onChange={handleCheckboxChange}
+        />
         <br />
         <input type="submit" />
       </form>
       <div>
-          {" "}
           <Link to={`/transactions`}>
-            <button>Delete</button>
+            <button>Cancel</button>
           </Link>
       </div>
     </div>
