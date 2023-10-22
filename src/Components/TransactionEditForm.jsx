@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
+import "./TransactionEditForm.css"
 const API = import.meta.env.VITE_BASE_URL
 
 
@@ -60,8 +61,10 @@ function TransactionEditForm() {
   }
   return (
     <div className="Edit">
+
+      
       <form onSubmit={handleSubmit}>
-        <label htmlFor="item_name">Item Name:</label>
+        <label className="name" htmlFor="item_name">Item Name:</label>
         <input
           id="item_name"
           value={transaction.item_name}
@@ -70,6 +73,7 @@ function TransactionEditForm() {
           placeholder={transaction.item_name}
           required
         />
+        <br></br>
         <label htmlFor="date">Date:</label>
         <input
           id="date"
@@ -78,6 +82,7 @@ function TransactionEditForm() {
           placeholder="date"
           onChange={handleTextChange}
         />
+        <br></br>
         <label htmlFor="category">Category:</label>
         <input
           id="category"
@@ -86,22 +91,17 @@ function TransactionEditForm() {
           placeholder="category"
           onChange={handleTextChange}
         />
+        <br></br>
         <label htmlFor="from">From:</label>
-        <textarea
+        <input
           id="from"
           value={transaction.from}
           type="text"
           placeholder="favorite quote"
           onChange={handleTextChange}
         />
-        <label htmlFor="inOrOut">Money In or Money Out:</label>
-        <input
-          id="mistakesWereMadeToday"
-          type="checkbox"
-          checked={transaction.inOrOut}
-          onChange={handleCheckboxChange}
-        />
-        <label htmlFor="amount">Money Amount:</label>
+        <br></br>
+        <label htmlFor="amount">Amount:</label>
         <input
           id="amount"
           value={transaction.amount}
@@ -109,18 +109,27 @@ function TransactionEditForm() {
           placeholder="#"
           onChange={handleTextChange}
         />
+        <br></br>
+        <label id="check" htmlFor="inOrOut">Deposit/Widthdraw:</label>
+        <input
+          id="inOrOut"
+          type="checkbox"
+          checked={transaction.inOrOut}
+          onChange={handleCheckboxChange}
+        />
+        
         <br />
         <input type="submit" />
       </form>
+
+      <br></br>
       <Link to={`/transactions/${index}`}>
-        <button>Nevermind!</button>
+        <button>Cancel</button>
       </Link>
-      <div>
-          {" "}
-          <Link to={`/transactions`}>
-            <button>Back</button>
-          </Link>
-      </div>
+      <Link to={`/transactions`}>
+        <button>View All</button>
+      </Link>
+      
     </div>
   )
 }

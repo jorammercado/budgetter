@@ -50,7 +50,7 @@ function TransactionDetails() {
             <td>Category: {transaction.category}</td>
             </tr>
             <tr>
-            <td>Deposit or Widthdraw: {transaction.inOrOut?"Deposit":"Widthdraw"}</td>
+            <td>Deposit/Widthdraw: {transaction.inOrOut?"Deposit":"Widthdraw"}</td>
             </tr>
             </tbody>
         </table>

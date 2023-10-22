@@ -1,0 +1,68 @@
+.Edit{
+    color:white;
+    
+}
+
+input[type=button], input[type=submit] {
+    font-family:inherit;
+    background-color: #fff;
+    color: black;
+    padding: 0.01em 1.1em 0.01em 1.1em;
+    border-radius: 20px;
+    font-weight:100;
+    font-size: 1.5em;
+    box-shadow: 0 2px 6px 0   
+  }
+
+  input[id=date]{
+    margin-left: 50px;
+  }
+
+  input[id=category]{
+    margin-left: 15px;
+  }
+
+  input[id=from]{
+    margin-left: 45px;
+  }
+
+  input[id=amount]{
+    margin-left: 20px;
+  }
+  input[id=amount]::-webkit-outer-spin-button,
+  input[id=amount]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  }
+
+
+  input[id=inOrOut]{
+    margin-left: 130px;
+  }
+
+  label[id=check]{
+    margin-left: 200px;
+  }
+
+  label{
+    margin-right: 15px;
+  }
+
+  input{
+    margin-bottom: 15px;
+    border: 1px solid #B0B0B0;
+    padding:12px 100px 12px 12px;
+    font-size:17px;
+    width: 30%;
+    box-sizing: border-box;
+    background-color: #484848;
+    color:white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0 
+  }
+
+  input[type=checkbox]{
+    accent-color: #484848;
+    box-shadow: none;
+  }
+
+

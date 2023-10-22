@@ -1,11 +1,12 @@
 import TransactionEditForm from "../Components/TransactionEditForm"
+import "./Edit.css"
 
 function Edit(){
     return (
-        <div className="New Edit" style={{textAlign:'center'}}>
-            <h2> Edit Page
-                <TransactionEditForm />
-            </h2>
+        <div className="Edit" >
+            <h2> Edit Transaction </h2>
+            <br></br>
+            <h3> <TransactionEditForm /></h3>
         </div>
     )
 }
