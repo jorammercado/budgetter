@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import "./NavBar.css"
-// const API = import.meta.env.VITE_BASE_URL
-const API = process.env.VITE_BASE_URL
+const API = import.meta.env.VITE_BASE_URL
+// const API = process.env.VITE_BASE_URL
 
 export default function NavBar() {
   const [transactions, setTransactions] = useState([]);

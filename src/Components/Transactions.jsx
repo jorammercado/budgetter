@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import React from 'react'
 import Transaction from "./Transaction";
 import "./Transactions.css"
-// const API = import.meta.env.VITE_BASE_URL
-const API = process.env.VITE_BASE_URL
+const API = import.meta.env.VITE_BASE_URL
+// const API = process.env.VITE_BASE_URL
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
