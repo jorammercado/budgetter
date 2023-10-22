@@ -14,6 +14,8 @@ function TransactionDetails() {
     .then(transaction => {
       //console.log(transaction)
       setTransaction(transaction)
+      //test
+      //navigate(`/transactions/${index}`)
     })
     .catch(() => navigate("/not-found"))
   }, [index, navigate]);

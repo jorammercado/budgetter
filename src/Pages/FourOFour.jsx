@@ -1,6 +1,8 @@
+import "./FourOFour.css"
+
 export default function FourOFour(){
     return (
-        <div style={{textAlign:'center'}}>
+        <div className="notFound">
             <h1>Sorry, no page found</h1>
         </div>
     )

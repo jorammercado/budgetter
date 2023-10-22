@@ -41,7 +41,7 @@ input[type=button], input[type=submit] {
 
 
   input[id=inOrOut]{
-    margin-left: 100px;
+    margin-left: 50px;
   }
 
   label[id=check]{
