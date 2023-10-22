@@ -29,3 +29,10 @@
     margin-top: 30px; /* Add a top margin to avoid content overlay */
   } 
 
+  .name{
+    color: white;
+    font-size: smaller;
+    text-align: right;
+    margin-top: 45px;
+    margin-right: 20px;
+  }
