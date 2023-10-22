@@ -2,7 +2,8 @@ import { useState } from "react"
 //import { Link, useParams, useNavigate } from "react-router-dom";
 import { useNavigate, Link } from "react-router-dom"
 import "./TransactionNewForm.css"
-const API = import.meta.env.VITE_BASE_URL
+// const API = import.meta.env.VITE_BASE_URL
+const API = process.env.VITE_BASE_URL
 
 function TransactionNewForm() {
   const navigate = useNavigate()
