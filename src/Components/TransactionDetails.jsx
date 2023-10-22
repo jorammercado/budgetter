@@ -2,8 +2,7 @@ import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import "./TransactionDetails.css"
 // const API = import.meta.env.VITE_BASE_URL
-// const API = process.env.VITE_BASE_URL
-const API = "https://budget-server-9diy.onrender.com/"
+const API = process.env.VITE_BASE_URL
 
 function TransactionDetails() {
   const [transaction, setTransaction] = useState([])
