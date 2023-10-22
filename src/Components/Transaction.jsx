@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import "./Transaction.css"
 
 function Transaction({ transaction, index }) {
@@ -18,7 +18,7 @@ function Transaction({ transaction, index }) {
     </tr>
 
     
-  );
+  )
 }
 
-export default Transaction;
+export default Transaction

@@ -35,13 +35,8 @@ function Transactions() {
           </tbody>
         </table>
       {/* </section> */}
-      <script>
-document.getElementById("balance").style.color = "blue";
-document.getElementById("balance").style.fontFamily = "Arial";
-document.getElementById("balance").style.fontSize = "larger";
-</script>
     </div>
-  );
+  )
 }
 
-export default Transactions;
+export default Transactions

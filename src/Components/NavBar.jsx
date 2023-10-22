@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
 import "./NavBar.css"
+const API = import.meta.env.VITE_BASE_URL
 
 export default function NavBar() {
+  const [transactions, setTransactions] = useState([]);
+  const total = transactions.reduce((tot,curr) => {return tot+curr.amount},0 )
+  useEffect(()=> {
+    fetch(`${API}/transactions`)
+    .then((response) => response.json())
+    .then( transactions => setTransactions(transactions))
+    .catch(error => console.log(error))
+  }, [])
+
   return (
     <div className="navbar" > 
     
@@ -20,7 +31,17 @@ export default function NavBar() {
                 </h1>
             </nav>
         {/* </div> */}
-        <div className="name"><p>Budget App</p></div>
+        
+        <div className="name">
+        <p>Budget App</p>
+        <div>
+          <p className="bal" style={{color:`${total>100?"green":total>0?"yellow":"red"}`}} >
+           {transactions.reduce((tot,curr) => {return tot+curr.amount},0 )} 
+        </p>
+        </div>
+        </div>
+          
+        
     </div>
   )
 }
