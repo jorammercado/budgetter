@@ -25,9 +25,8 @@ function TransactionDetails() {
     const httpOptions = {"method" : "DELETE"}
     fetch(`${API}/transactions/${index}`, httpOptions)
       .then((res) => {
-        //console.log(res)
-        //alert("hey - transaction was deleted!  Way to GO!");
-        navigate('/transactions');
+        alert("transaction was deleted!")
+        navigate('/transactions')
       })
       .catch((err) => console.error(err))
   }
